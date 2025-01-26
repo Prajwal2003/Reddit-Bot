@@ -2,12 +2,12 @@ import praw
 
 def authenticate():
     reddit = praw.Reddit(
-        client_id="i6w_88G0jjFOoJPR0Ar9fg",
-        client_secret="j0ILwFhscNDAYj0edRY9XUGge_zThg",
-        username="Long_Humor167",
-        password="prajwal2003",
-        user_agent="RedditBot v1.0 (by u/Long_Humor167)"
-)
+        client_id="YOUR_CLIENT_ID",
+        client_secret="YOUR_CLIENT_SECRET",
+        username="YOUR_USERNAME",
+        password="YOUR_PASSWORD",
+        user_agent="RedditBot v1.0 (by u/YOUR_USERNAME)"
+    )
     print(f"Authenticated as: {reddit.user.me()}")
     return reddit
 
