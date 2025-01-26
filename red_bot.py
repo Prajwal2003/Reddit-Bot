@@ -13,19 +13,16 @@ def authenticate():
 
 def post_and_comment(reddit):
     try:
-        # Post to subreddit
         subreddit = reddit.subreddit("test")
         post = subreddit.submit("Hello Reddit!", selftext="This is a test post.")
         print(f"Posted to r/test: {post.title}")
         
-        # Comment on the post
         try:
             comment = post.reply("This is a test comment.")
             print("Commented successfully!")
         except Exception as e:
             print(f"Error commenting on post: {e}")
 
-        # Upvote the post
         try:
             post.upvote()
             print("Upvoted successfully!")

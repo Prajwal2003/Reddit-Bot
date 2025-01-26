@@ -2,7 +2,6 @@ import praw
 import time
 import random
 
-# Authenticate with Reddit
 def authenticate():
     reddit = praw.Reddit(
         client_id="i6w_88G0jjFOoJPR0Ar9fg",
@@ -14,7 +13,6 @@ def authenticate():
     print(f"Authenticated as: {reddit.user.me()}")
     return reddit
 
-# Post to a subreddit
 def post_to_subreddit(reddit, subreddit_name, title, body):
     try:
         subreddit = reddit.subreddit(subreddit_name)
@@ -23,7 +21,6 @@ def post_to_subreddit(reddit, subreddit_name, title, body):
     except Exception as e:
         print(f"Error posting to r/{subreddit_name}: {e}")
 
-# Comment on a specific post
 def comment_on_post(reddit, post_url, comment_text):
     try:
         submission = reddit.submission(url=post_url)
@@ -32,7 +29,6 @@ def comment_on_post(reddit, post_url, comment_text):
     except Exception as e:
         print(f"Error commenting on post: {e}")
 
-# Upvote a post or comment
 def upvote_item(reddit, item_url):
     try:
         item = reddit.submission(url=item_url) if "comments" in item_url else reddit.comment(url=item_url)
@@ -41,15 +37,13 @@ def upvote_item(reddit, item_url):
     except Exception as e:
         print(f"Error upvoting item: {e}")
 
-# Main function
 if __name__ == "__main__":
     reddit = authenticate()
 
-    # Example actions:
     post_to_subreddit(reddit, "test", "Hello Reddit!", "This is an automated post.")
-    time.sleep(random.randint(5, 10))  # Random delay between actions
+    time.sleep(random.randint(5, 10))
 
     comment_on_post(reddit, "https://www.reddit.com/r/test/comments/example", "Nice post!")
-    time.sleep(random.randint(5, 10))  # Random delay
+    time.sleep(random.randint(5, 10))
 
     upvote_item(reddit, "https://www.reddit.com/r/test/comments/example")

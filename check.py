@@ -8,4 +8,4 @@ reddit = praw.Reddit(
         password="prajwal2003",
         user_agent="RedditBot v1.0 (by u/Long_Humor167)"
 )
-print(reddit.auth.scopes())  # Check the granted OAuth scopes
+print(reddit.auth.scopes())
