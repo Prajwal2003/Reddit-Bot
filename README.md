@@ -80,9 +80,15 @@ This project is a Python-based Reddit bot that uses the [PRAW](https://praw.read
 ## Usage
 
 ### Run the Bot
-Execute the script:
+Execute the script for upvote, downvote, posting and commenting:
 ```bash
 python reddit_bot.py
+```
+
+
+Execute the script for all above functionality with DM function:
+```bash
+python red_bot_withDM.py
 ```
 
 ### Direct Message Feature
